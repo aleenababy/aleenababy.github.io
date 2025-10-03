@@ -30,12 +30,12 @@
             --bg-secondary: #1A1A1A;
             --text-primary: #F4F4F4;
             --text-secondary: #B8B8B8;
-            --accent-1: #D4AF37;
+            --accent-1: #d8ab18;
             --accent-2: #78866B;
             --card-bg: #1E1E1E;
             --card-shadow: rgba(212, 175, 55, 0.1);
             --border-color: rgba(212, 175, 55, 0.2);
-            --star-color: rgba(212, 175, 55, 0.8);
+            --star-color: rgb(246, 190, 5);
             --connection-color: rgba(120, 134, 107, 0.3);
             --icon-color: #D4AF37;
         }
@@ -45,12 +45,12 @@
             --bg-secondary: #F8F8F8;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
-            --accent-1: #FF6B6B;
+            --accent-1: #e91818;
             --accent-2: #FFC75F;
             --card-bg: #FFFFFF;
             --card-shadow: rgba(0, 0, 0, 0.1);
             --border-color: rgba(255, 107, 107, 0.2);
-            --star-color: rgba(255, 215, 0, 0.8);
+            --star-color: rgb(231, 12, 15);
             --connection-color: rgba(128, 128, 128, 0.3);
             --icon-color: #FF6B6B;
         }
@@ -159,6 +159,7 @@
         #hero {
             position: relative;
             height: 100vh;
+            width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -178,6 +179,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            flex-wrap: wrap;
             max-width: 800px;
             padding: 2rem;
         }
@@ -201,7 +203,14 @@
             opacity: 0.9;
             animation: fadeInUp 1s ease 0.4s both;
         }
-
+        .hero-image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px; /* Optional */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Optional */
+        }
         .cta-buttons {
             display: flex;
             gap: 1rem;
@@ -832,7 +841,17 @@
                 grid-template-columns: 1fr;
             }
         }
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
 
+            .hero-image img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
         @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
@@ -925,8 +944,9 @@
         <h2>About Me</h2>
         <div class="about-content">
             <div>
-                <img src="https://via.placeholder.com/300x400/D4AF37/1B1B1B?text=Dr.+Aleena+Baby" alt="Dr. Aleena Baby" class="about-image">
-                <div class="info-sidebar">
+                <img src="assests/img/aleena-professional-bg.png" alt="Dr. Aleena Baby" class="about-image">
+            <!--
+            <div class="info-sidebar">
                     <h4>Quick Facts</h4>
                     <ul>
                         <li>Based in Germany & France (EU Blue Card holder)</li>
@@ -937,7 +957,8 @@
                         <li>Writes on Substack</li>
                         <li><strong>Learning:</strong> German (B2) & AI agents</li>
                     </ul>
-                </div>
+                </div>    
+            --->
             </div>
             <div class="about-text">
                 <p>
@@ -1101,7 +1122,7 @@
 
             <div class="project-item" onclick="openModal('project3')">
                 <div class="project-info">
-                    <h3>Waste Management AI</h3>
+                    <h3>Data Driven Waste Management</h3>
                     <p class="project-venue">Omdena Berlin</p>
                     <p class="project-summary">Data-driven optimization model for Berlin with 80+ global collaborators. Led preprocessing and web scraping for sustainable insights.</p>
                     <div class="project-tech">
@@ -1112,7 +1133,7 @@
                     </div>
                 </div>
                 <div class="project-actions">
-                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span></a>
                     <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
                     <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
                     <button class="action-btn" onclick="event.stopPropagation(); openModal('project3')"><span class="emoji-icon">📖</span> Read More</button>
@@ -1573,7 +1594,7 @@
         canvas.height = window.innerHeight;
 
         const stars = [];
-        const numStars = 400;
+        const numStars = 550;
         const connectionDistance = 120;
         let mouseX = null;
         let mouseY = null;
@@ -1672,26 +1693,7 @@
                 }
             }
 
-            // Fade-in constellation effect
-            if (constellationTimer > constellationInterval) {
-                const randomStars = [];
-                for (let i = 0; i < 5; i++) {
-                    randomStars.push(stars[Math.floor(Math.random() * stars.length)]);
-                }
-                
-                ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
-                ctx.lineWidth = 1.5;
-                ctx.beginPath();
-                ctx.moveTo(randomStars[0].x, randomStars[0].y);
-                for (let i = 1; i < randomStars.length; i++) {
-                    ctx.lineTo(randomStars[i].x, randomStars[i].y);
-                }
-                ctx.stroke();
-                
-                if (constellationTimer > constellationInterval + 1000) {
-                    constellationTimer = 0;
-                }
-            }
+            
 
             stars.forEach(star => {
                 star.update();
