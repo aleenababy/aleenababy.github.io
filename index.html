@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Aleena Baby | AI Engineer & Data Scientist | PhD in Physics</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dr. Aleena Baby - AI Engineer and Data Scientist in Germany. PhD in computational astrophysics. Specializing in machine learning for manufacturing, MLOps, and industrial AI. EU Blue Card holder.">
+    <meta name="keywords" content="AI engineer Germany, PhD data scientist, machine learning manufacturing, computational astrophysics, MLOps, Python, Streamlit, EU Blue Card, Aachen, AI consultant">
+    <meta name="author" content="Dr. Aleena Baby">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dr. Aleena Baby | AI Engineer & Data Scientist">
+    <meta property="og:description" content="From astrophysics to AI for manufacturing. Building production-ready ML systems that solve real-world industrial problems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dr.aleenababy.com">
+    <meta property="og:image" content="https://dr.aleenababy.com/og-image.jpg">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://dr.aleenababy.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1A1A1A;
+            --text-primary: #F4F4F4;
+            --text-secondary: #B8B8B8;
+            --accent-1: #D4AF37;
+            --accent-2: #78866B;
+            --card-bg: #1E1E1E;
+            --card-shadow: rgba(212, 175, 55, 0.1);
+            --border-color: rgba(212, 175, 55, 0.2);
+            --star-color: rgba(212, 175, 55, 0.8);
+            --connection-color: rgba(120, 134, 107, 0.3);
+            --icon-color: #D4AF37;
+        }
+
+        body.theme-light {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --accent-1: #FF6B6B;
+            --accent-2: #FFC75F;
+            --card-bg: #FFFFFF;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --border-color: rgba(255, 107, 107, 0.2);
+            --star-color: rgba(255, 215, 0, 0.8);
+            --connection-color: rgba(128, 128, 128, 0.3);
+            --icon-color: #FF6B6B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            background-color: rgba(18, 18, 18, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        body.theme-light nav {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-1);
+        }
+
+        .mentor-btn {
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .mentor-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid var(--accent-1);
+            color: var(--accent-1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle-btn:hover {
+            background-color: var(--accent-1);
+            color: white;
+            transform: rotate(180deg);
+        }
+
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #neural-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--accent-1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-1);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-1);
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--accent-1);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-1);
+        }
+
+        /* About Section with Sidebar */
+        #about {
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid var(--accent-1);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .info-sidebar {
+            position: sticky;
+            top: 100px;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-1);
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 20px var(--card-shadow);
+            animation: slideInRight 0.8s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-sidebar h4 {
+            color: var(--accent-1);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .info-sidebar ul {
+            list-style: none;
+        }
+
+        .info-sidebar ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-sidebar ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-1);
+        }
+
+        /* Resume Section */
+        .resume-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-1);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+        }
+
+        .timeline-item h4 {
+            color: var(--accent-1);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .timeline-learn-more {
+            margin-top: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .timeline-learn-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .resume-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .resume-card {
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-1);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px var(--card-shadow);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .resume-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .resume-card h3 {
+            color: var(--accent-1);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-card .company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-card .period {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            padding: 0.3rem 0.8rem;
+            background-color: var(--accent-2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-1);
+            transition: transform 0.3s ease;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-info h3 {
+            color: var(--accent-1);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .project-venue {
+            opacity: 0.8;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-summary {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            padding: 0.2rem 0.6rem;
+            background-color: var(--accent-2);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .action-btn {
+            padding: 0.4rem 0.8rem;
+            border: 2px solid var(--accent-1);
+            color: var(--accent-1);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: transparent;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background-color: var(--accent-1);
+            color: white;
+        }
+
+        .action-btn .emoji-icon {
+            font-size: 1rem;
+            color: var(--icon-color);
+            transition: color 0.3s ease;
+        }
+
+        .action-btn:hover .emoji-icon {
+            color: white;
+        }
+
+        /* Teaching Section */
+        .teaching-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-1);
+            margin-bottom: 2rem;
+        }
+
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .teaching-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-1);
+            transition: transform 0.3s ease;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .teaching-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .teaching-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--accent-2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+        }
+
+        /* Newsletter Section */
+        .newsletter-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .newsletter-card {
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-1);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px var(--card-shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .newsletter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .newsletter-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background-color: var(--accent-2);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .newsletter-card h3 {
+            color: var(--accent-1);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .newsletter-excerpt {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .newsletter-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .read-article-btn {
+            padding: 0.6rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .read-article-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--accent-1);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: var(--accent-1);
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .modal-body h3 {
+            color: var(--accent-1);
+            margin-bottom: 1rem;
+        }
+
+        .modal-body p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .modal-body ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .contact-btn.email {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+        }
+
+        .contact-btn.linkedin {
+            background-color: #0077B5;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid,
+            .teaching-grid,
+            .newsletter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                width: 100%;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                background-color: var(--bg-primary);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info-sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .projects-grid,
+            .teaching-grid,
+            .newsletter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="theme-galaxy">
+    <nav>
+        <div class="container">
+            <div class="logo">AB</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://academiatoindustry.com/" target="_blank" class="mentor-btn">Mentor Me</a></li>
+                <li>
+                    <button class="theme-toggle-btn" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <canvas id="neural-background"></canvas>
+        <div class="hero-content">
+            <h1>Dr. Aleena Baby</h1>
+            <p class="subtitle">Astrophysicist turned AI Engineer</p>
+            <p class="tagline">From stars to simulations, I solve real-world problems with machine learning.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div>
+                <img src="https://via.placeholder.com/300x400/D4AF37/1B1B1B?text=Dr.+Aleena+Baby" alt="Dr. Aleena Baby" class="about-image">
+                <div class="info-sidebar">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>Based in Germany & France (EU Blue Card holder)</li>
+                        <li>PhD in Physics (Computational Astrophysics)</li>
+                        <li>Working in AI for metal casting</li>
+                        <li>Lecturer: Hochschule Fresenius Köln</li>
+                        <li><strong>Current stack:</strong> Python, Streamlit, MLflow, DuckDB</li>
+                        <li>Writes on Substack</li>
+                        <li><strong>Learning:</strong> German (B2) & AI agents</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>
+                    I started my journey exploring the largest structures in the universe. With a PhD in computational astrophysics, I built simulations to understand the formation of galaxies — combining physics, mathematics, and code to answer cosmic questions.
+                </p>
+                <p>
+                    Today, I use those same skills to solve industrial problems that are no less complex. As a data scientist and ML engineer in Germany's manufacturing sector, I've developed AI models to predict microporosity in casting, built digital twins to optimize production workflows, and delivered tools that integrate simulation, domain knowledge, and machine learning — in environments where downtime costs millions.
+                </p>
+                <p>
+                    I combine deep technical skills, interdisciplinary thinking, and teaching experience to bridge academia and industry. Whether I'm leading ML projects, teaching Python, or mentoring PhDs transitioning to industry, I bring clarity, energy, and impact. If you're looking for someone who can connect science, software, and storytelling — we should talk.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Experience</h2>
+        <div class="resume-container">
+            <div class="timeline">
+                <div class="timeline-item" onclick="scrollToResumeCard('resume1')">
+                    <h4>2025 - Present</h4>
+                    <p>Applied Data Scientist</p>
+                    <small>ACCESS e.V.</small>
+                </div>
+                <div class="timeline-item" onclick="scrollToResumeCard('resume2')">
+                    <h4>2024 - Present</h4>
+                    <p>Lecturer AI/ML</p>
+                    <small>Hochschule Fresenius</small>
+                </div>
+                <div class="timeline-item" onclick="scrollToResumeCard('resume3')">
+                    <h4>2024 - 2025</h4>
+                    <p>ML Engineer</p>
+                    <small>Omdena</small>
+                </div>
+                <div class="timeline-item" onclick="scrollToResumeCard('resume4')">
+                    <h4>2019 - 2023</h4>
+                    <p>Research Assistant</p>
+                    <small>University of Cologne</small>
+                </div>
+                <a href="#" class="timeline-learn-more">Learn More</a>
+            </div>
+
+            <div class="resume-details">
+                <div class="resume-card" id="resume1" onclick="openModal('resume-modal1')">
+                    <h3>Applied Data Scientist | AI Engineer</h3>
+                    <p class="company">ACCESS e.V.</p>
+                    <p class="period">January 2025 - Present | Aachen, Germany</p>
+                    <p>Leading end-to-end AI/ML solutions for defect prediction in aerospace casting. Built interactive dashboards achieving >95% accuracy using simulation data and production-ready MLOps pipelines.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">XGBoost</span>
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">MLflow</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">DVC</span>
+                        <span class="tech-badge">Deep Learning</span>
+                    </div>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('resume-modal1')">
+                        <span class="emoji-icon">📖</span> Read More
+                    </button>
+                </div>
+
+                <div class="resume-card" id="resume2" onclick="openModal('resume-modal2')">
+                    <h3>Lecturer | AI & Machine Learning</h3>
+                    <p class="company">Hochschule Fresenius</p>
+                    <p class="period">March 2024 - Present | Cologne, Germany</p>
+                    <p>Teaching comprehensive AI/ML curriculum. Achieved 25% increase in student engagement and 30% improvement in job placement rates. Supervising Master's theses.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">NLP</span>
+                        <span class="tech-badge">MLOps</span>
+                    </div>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('resume-modal2')">
+                        <span class="emoji-icon">📖</span> Read More
+                    </button>
+                </div>
+
+                <div class="resume-card" id="resume3" onclick="openModal('resume-modal3')">
+                    <h3>Machine Learning Engineer | Lead Data Scientist</h3>
+                    <p class="company">Omdena</p>
+                    <p class="period">June 2024 - January 2025 | Global Collaboration</p>
+                    <p>Developed AI-powered weather warning system processing 500K+ daily data points. Reduced false alarms by 25% and achieved 98% data integrity through rigorous validation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Machine Learning</span>
+                        <span class="tech-badge">Time Series</span>
+                        <span class="tech-badge">Data Validation</span>
+                        <span class="tech-badge">API Integration</span>
+                    </div>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('resume-modal3')">
+                        <span class="emoji-icon">📖</span> Read More
+                    </button>
+                </div>
+
+                <div class="resume-card" id="resume4" onclick="openModal('resume-modal4')">
+                    <h3>Research Assistant | PhD Computational Astrophysics</h3>
+                    <p class="company">University of Cologne</p>
+                    <p class="period">June 2019 - March 2023 | Germany</p>
+                    <p>Developed high-performance computational models solving 1000+ PDEs in <2 minutes. Reduced calculation time by 30% through interpolation schemes. Published in peer-reviewed journals.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">NumPy</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Matplotlib</span>
+                        <span class="tech-badge">Scientific Computing</span>
+                        <span class="tech-badge">Numerical Methods</span>
+                    </div>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('resume-modal4')">
+                        <span class="emoji-icon">📖</span> Read More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-item" onclick="openModal('project1')">
+                <div class="project-info">
+                    <h3>AI-Driven Porosity Prediction</h3>
+                    <p class="project-venue">ACCESS e.V.</p>
+                    <p class="project-summary">Real-time ML dashboard for aerospace casting defect prediction. Achieved >95% R² accuracy using ensemble methods and deep learning on simulation data.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">MLflow</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('project1')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal('project2')">
+                <div class="project-info">
+                    <h3>Weather Warning System</h3>
+                    <p class="project-venue">Omdena</p>
+                    <p class="project-summary">AI-powered early warning system processing 500K+ daily data points. Reduced false alarms by 25% with real-time SMS/WhatsApp deployment.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">ML</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">APIs</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('project2')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal('project3')">
+                <div class="project-info">
+                    <h3>Waste Management AI</h3>
+                    <p class="project-venue">Omdena Berlin</p>
+                    <p class="project-summary">Data-driven optimization model for Berlin with 80+ global collaborators. Led preprocessing and web scraping for sustainable insights.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Web Scraping</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">ML</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('project3')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal('project4')">
+                <div class="project-info">
+                    <h3>PDR Simulation Model</h3>
+                    <p class="project-venue">University of Cologne</p>
+                    <p class="project-summary">High-performance model solving 1000+ PDEs in <2 minutes. Reduced calculation time by 30% for star-forming region simulations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Numerical Methods</span>
+                        <span class="tech-tag">Scientific Computing</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('project4')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="project-item" onclick="openModal('project5')">
+                <div class="project-info">
+                    <h3>Air Quality Prediction</h3>
+                    <p class="project-venue">Omdena Gurugram</p>
+                    <p class="project-summary">ML model predicting air quality in Gurugram, India. Comprehensive data cleaning and factor analysis using Scikit-learn.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Data Preprocessing</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">💻</span> GitHub</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📊</span> Presentation</a>
+                    <a href="#" class="action-btn" onclick="event.stopPropagation()"><span class="emoji-icon">📄</span> Paper</a>
+                    <button class="action-btn" onclick="event.stopPropagation(); openModal('project5')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <p class="teaching-intro">"I teach the next generation of AI talent to think like engineers, not just coders."</p>
+        <div class="teaching-grid">
+            <div class="teaching-item">
+                <span class="teaching-badge">Talks</span>
+                <div class="project-info">
+                    <h3>Conference & Workshop Presentations</h3>
+                    <p class="project-venue">International Venues</p>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn"><span class="emoji-icon">📊</span> Slides</a>
+                    <button class="action-btn" onclick="openModal('teaching1')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="teaching-item">
+                <span class="teaching-badge">Current</span>
+                <div class="project-info">
+                    <h3>AI & Machine Learning</h3>
+                    <p class="project-venue">Hochschule Fresenius</p>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn"><span class="emoji-icon">📊</span> Slides</a>
+                    <button class="action-btn" onclick="openModal('teaching2')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="teaching-item">
+                <span class="teaching-badge">Current</span>
+                <div class="project-info">
+                    <h3>Intro to Python for Data Science</h3>
+                    <p class="project-venue">Hochschule Fresenius</p>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn"><span class="emoji-icon">📊</span> Slides</a>
+                    <button class="action-btn" onclick="openModal('teaching3')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="teaching-item">
+                <span class="teaching-badge">Previous</span>
+                <div class="project-info">
+                    <h3>Physics Courses</h3>
+                    <p class="project-venue">Various Institutions</p>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn"><span class="emoji-icon">📊</span> Slides</a>
+                    <button class="action-btn" onclick="openModal('teaching4')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+
+            <div class="teaching-item">
+                <span class="teaching-badge">Previous</span>
+                <div class="project-info">
+                    <h3>Astronomy & Astrophysics</h3>
+                    <p class="project-venue">Various Institutions</p>
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="action-btn"><span class="emoji-icon">📊</span> Slides</a>
+                    <button class="action-btn" onclick="openModal('teaching5')"><span class="emoji-icon">📖</span> Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="writing">
+        <h2>Technical Writing</h2>
+        <p class="newsletter-intro">Deep dives into MLOps, production AI systems, and the intersection of physics and machine learning. Technical insights from building real-world AI solutions.</p>
+        <div class="newsletter-grid">
+            <div class="newsletter-card">
+                <span class="newsletter-badge">Featured</span>
+                <h3>Building Production-Ready ML Pipelines with MLflow and DVC</h3>
+                <div class="newsletter-meta">
+                    <span>📅 15 min read</span>
+                    <span>🔥 Tech Deep-Dive</span>
+                </div>
+                <p class="newsletter-excerpt">
+                    A comprehensive guide to implementing scalable MLOps workflows using MLflow for experiment tracking and DVC for data versioning. Learn how to build reproducible ML pipelines that actually work in production environments, with real examples from aerospace manufacturing.
+                </p>
+                <a href="#" class="read-article-btn">Read on Substack</a>
+            </div>
+
+            <div class="newsletter-card">
+                <span class="newsletter-badge">Technical</span>
+                <h3>From Astrophysics to Industrial AI: Applying Scientific Computing to Manufacturing</h3>
+                <div class="newsletter-meta">
+                    <span>📅 12 min read</span>
+                    <span>🔥 Tech Deep-Dive</span>
+                </div>
+                <p class="newsletter-excerpt">
+                    How computational methods from astrophysics translate to industrial problems. Exploring the parallels between solving partial differential equations for star formation and optimizing casting processes with simulation-driven ML models.
+                </p>
+                <a href="#" class="read-article-btn">Read on Substack</a>
+            </div>
+
+            <div class="newsletter-card">
+                <span class="newsletter-badge">MLOps</span>
+                <h3>Streamlit + Docker: Deploying ML Dashboards That Scale</h3>
+                <div class="newsletter-meta">
+                    <span>📅 10 min read</span>
+                    <span>🔥 Tech Deep-Dive</span>
+                </div>
+                <p class="newsletter-excerpt">
+                    Practical walkthrough of containerizing Streamlit applications for production deployment. Covers Docker best practices, environment management, CI/CD integration, and real-time model serving with examples from defect detection systems.
+                </p>
+                <a href="#" class="read-article-btn">Read on Substack</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Want to collaborate on an AI project, discuss research opportunities, or explore how machine learning can transform your business? I'm always open to meaningful conversations around applied AI and simulation-driven innovation.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:aleenababy839@gmail.com" class="contact-btn email">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/aleena-baby" target="_blank" class="contact-btn linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dr. Aleena Baby. All rights reserved.</p>
+        <p style="color: var(--accent-1); margin-top: 0.5rem;">From stars to simulations</p>
+    </footer>
+
+    <!-- Resume Modals -->
+    <div id="resume-modal1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('resume-modal1')">&times;</button>
+            <div class="modal-body">
+                <h3>Applied Data Scientist | AI Engineer at ACCESS e.V.</h3>
+                <p><strong>Duration:</strong> January 2025 - Present</p>
+                <p><strong>Location:</strong> Aachen, Germany</p>
+                <h4>Overview</h4>
+                <p>Leading end-to-end development of AI/ML solutions for defect prediction in aerospace casting processes, aligning with Germany's Industry 4.0 and sustainable manufacturing initiatives.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Built and deployed interactive ML dashboards (Streamlit) for real-time defect visualization</li>
+                    <li>Trained supervised models (Random Forest, XGBoost, Deep Learning) achieving >95% R² accuracy</li>
+                    <li>Implemented scalable MLOps using Docker, DVC, MLflow, and Git</li>
+                    <li>Initiated 2+ LLM integrations into simulation workflows</li>
+                    <li>Collaborated with cross-functional stakeholders to embed AI-driven decision support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="resume-modal2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('resume-modal2')">&times;</button>
+            <div class="modal-body">
+                <h3>Lecturer | AI & Machine Learning at Hochschule Fresenius</h3>
+                <p><strong>Duration:</strong> March 2024 - Present</p>
+                <p><strong>Location:</strong> Cologne, Germany</p>
+                <h4>Overview</h4>
+                <p>Developed comprehensive curriculum covering 15+ key skills in AI and ML, with focus on industry-ready applications and practical projects.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>25% increase in student participation and project completion rates</li>
+                    <li>30% improvement in student job placement rates</li>
+                    <li>Supervised 2+ Master's theses with high academic success</li>
+                    <li>Designed interactive sessions with real-world business applications</li>
+                </ul>
+                <h4>Courses</h4>
+                <ul>
+                    <li>Introduction to Python for Data Science</li>
+                    <li>Business Analytics</li>
+                    <li>Artificial Intelligence and Machine Learning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="resume-modal3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('resume-modal3')">&times;</button>
+            <div class="modal-body">
+                <h3>Machine Learning Engineer at Omdena</h3>
+                <p><strong>Duration:</strong> June 2024 - January 2025</p>
+                <p><strong>Type:</strong> Global Collaboration</p>
+                <h4>Overview</h4>
+                <p>Engineered AI-driven weather prediction model processing over 500,000 data points daily, providing actionable insights for disaster preparedness.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Reduced development time by 25% through team collaboration optimization</li>
+                    <li>Achieved 98% data integrity through rigorous validation</li>
+                    <li>Reduced false alarm rates by 25%</li>
+                    <li>Deployed real-time alerts via SMS and WhatsApp</li>
+                    <li>Maintained 95% confidence level in predictions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="resume-modal4" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('resume-modal4')">&times;</button>
+            <div class="modal-body">
+                <h3>Research Assistant | PhD at University of Cologne</h3>
+                <p><strong>Duration:</strong> June 2019 - March 2023</p>
+                <p><strong>Field:</strong> Computational Astrophysics</p>
+                <h4>Overview</h4>
+                <p>Spearheaded development of high-performance computational models for star-forming regions, solving over 1000 partial differential equations in under 2 minutes.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Engineered interpolation scheme reducing calculation time by 30%</li>
+                    <li>Improved data retrieval efficiency by 25%</li>
+                    <li>Presented at international conferences and workshops</li>
+                    <li>Published in peer-reviewed journals</li>
+                    <li>Mentored graduate students in data analysis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals (keeping existing ones) -->
+    <div id="project1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('project1')">&times;</button>
+            <div class="modal-body">
+                <h3>AI-Driven Porosity Prediction in Aerospace Casting</h3>
+                <p><strong>Organization:</strong> ACCESS e.V., Aachen, Germany</p>
+                <p><strong>Duration:</strong> January 2025 - Present</p>
+                <h4>Project Overview</h4>
+                <p>Led end-to-end development of AI/ML solutions for defect prediction in aerospace casting processes. Built interactive ML dashboards using Python and Streamlit for real-time defect probability visualization.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Trained supervised ML models achieving >95% R² accuracy</li>
+                    <li>Implemented scalable MLOps architecture</li>
+                    <li>Collaborated with cross-functional teams</li>
+                    <li>Initiated 2+ LLM integrations</li>
+                </ul>
+                <h4>Technologies</h4>
+                <p>Python, XGBoost, Random Forest, Deep Learning, Streamlit, MLflow, Docker, DVC, Git</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="project2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('project2')">&times;</button>
+            <div class="modal-body">
+                <h3>AI-Powered Early Weather Warning System</h3>
+                <p><strong>Organization:</strong> Omdena</p>
+                <p><strong>Duration:</strong> June 2024 - January 2025</p>
+                <h4>Project Overview</h4>
+                <p>Engineered AI-driven weather prediction model processing over 500,000 data points daily.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Reduced development time by 25%</li>
+                    <li>Achieved 98% data integrity rate</li>
+                    <li>Reduced false alarm rates by 25%</li>
+                    <li>Deployed real-time SMS/WhatsApp alerts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="project3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('project3')">&times;</button>
+            <div class="modal-body">
+                <h3>Data-Driven Waste Management Optimization</h3>
+                <p><strong>Organization:</strong> Omdena Berlin</p>
+                <p><strong>Duration:</strong> August 2023 - October 2023</p>
+                <h4>Project Overview</h4>
+                <p>Collaborated with 80+ global members to develop waste management optimization model for Berlin.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Led data collection and preprocessing</li>
+                    <li>Applied web scraping techniques</li>
+                    <li>Delivered high-quality data ahead of schedule</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="project4" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('project4')">&times;</button>
+            <div class="modal-body">
+                <h3>Photon-Dissociation Region Simulation Model</h3>
+                <p><strong>Organization:</strong> University of Cologne</p>
+                <p><strong>Duration:</strong> June 2019 - March 2023</p>
+                <h4>Project Overview</h4>
+                <p>Developed high-performance computational model solving 1000+ PDEs in under 2 minutes.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Reduced calculation time by 30%</li>
+                    <li>Improved data retrieval by 25%</li>
+                    <li>Published in peer-reviewed journals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="project5" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('project5')">&times;</button>
+            <div class="modal-body">
+                <h3>Air Quality Prediction Model</h3>
+                <p><strong>Organization:</strong> Omdena Gurugram</p>
+                <p><strong>Duration:</strong> March 2023 - May 2023</p>
+                <h4>Project Overview</h4>
+                <p>Developed ML model for air quality prediction in Gurugram, India.</p>
+                <h4>Key Achievements</h4>
+                <ul>
+                    <li>Refined ML model using Python and Scikit-learn</li>
+                    <li>Conducted thorough data cleaning</li>
+                    <li>Analyzed factors influencing air quality</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teaching Modals (keeping existing ones with same structure) -->
+    <div id="teaching1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teaching1')">&times;</button>
+            <div class="modal-body">
+                <h3>Conference & Workshop Presentations</h3>
+                <p>Presented pioneering research at international conferences and workshops.</p>
+                <h4>Topics</h4>
+                <ul>
+                    <li>Computational Astrophysics</li>
+                    <li>Machine Learning for Industrial Applications</li>
+                    <li>MLOps and Production AI Systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="teaching2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teaching2')">&times;</button>
+            <div class="modal-body">
+                <h3>Artificial Intelligence & Machine Learning</h3>
+                <p><strong>Institution:</strong> Hochschule Fresenius</p>
+                <h4>Topics Covered</h4>
+                <ul>
+                    <li>Supervised & Unsupervised Learning</li>
+                    <li>Natural Language Processing</li>
+                    <li>Model Deployment and MLOps</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="teaching3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teaching3')">&times;</button>
+            <div class="modal-body">
+                <h3>Introduction to Python for Data Science</h3>
+                <p><strong>Institution:</strong> Hochschule Fresenius</p>
+                <h4>Topics Covered</h4>
+                <ul>
+                    <li>Python Fundamentals</li>
+                    <li>NumPy and Pandas</li>
+                    <li>Data Visualization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="teaching4" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teaching4')">&times;</button>
+            <div class="modal-body">
+                <h3>Physics Courses</h3>
+                <p><strong>Institutions:</strong> St Alphonsa College, SNDP Yogam College</p>
+                <h4>Topics Covered</h4>
+                <ul>
+                    <li>Electronics and Circuit Theory</li>
+                    <li>Thermodynamics</li>
+                    <li>Optics and Wave Theory</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="teaching5" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('teaching5')">&times;</button>
+            <div class="modal-body">
+                <h3>Astronomy & Astrophysics</h3>
+                <p><strong>Institutions:</strong> St Alphonsa College</p>
+                <h4>Topics Covered</h4>
+                <ul>
+                    <li>Astronomy Fundamentals</li>
+                    <li>Stellar Evolution</li>
+                    <li>Observational Techniques</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('neural-background');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const stars = [];
+        const numStars = 400;
+        const connectionDistance = 120;
+        let mouseX = null;
+        let mouseY = null;
+        let scrollSpeed = 0;
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.z = Math.random() * 2;
+                this.baseVx = (Math.random() - 0.5) * 0.5;
+                this.baseVy = (Math.random() - 0.5) * 0.5;
+                this.vx = this.baseVx;
+                this.vy = this.baseVy;
+            }
+
+            update() {
+                // Adjust velocity based on scroll speed
+                this.vx = this.baseVx * (1 + scrollSpeed * 0.1);
+                this.vy = this.baseVy * (1 + scrollSpeed * 0.1);
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Mouse interaction
+                if (mouseX !== null && mouseY !== null) {
+                    const dx = mouseX - this.x;
+                    const dy = mouseY - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 150) {
+                        this.x -= dx * 0.01;
+                        this.y -= dy * 0.01;
+                    }
+                }
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                const starColor = getComputedStyle(document.body).getPropertyValue('--star-color');
+                ctx.fillStyle = starColor;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.z, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < numStars; i++) {
+            stars.push(new Star());
+        }
+
+        let constellationTimer = 0;
+        const constellationInterval = 3000; // New constellation every 3 seconds
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const connectionColor = getComputedStyle(document.body).getPropertyValue('--connection-color');
+            constellationTimer += 16;
+
+            // Regular connections
+            for (let i = 0; i < stars.length; i++) {
+                for (let j = i + 1; j < stars.length; j++) {
+                    const dx = stars[i].x - stars[j].x;
+                    const dy = stars[i].y - stars[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        const opacity = (1 - distance / connectionDistance) * 0.3;
+                        ctx.strokeStyle = connectionColor;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(stars[i].x, stars[i].y);
+                        ctx.lineTo(stars[j].x, stars[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                // Mouse connection
+                if (mouseX !== null && mouseY !== null) {
+                    const dx = stars[i].x - mouseX;
+                    const dy = stars[i].y - mouseY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        const opacity = (1 - distance / 150) * 0.5;
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(stars[i].x, stars[i].y);
+                        ctx.lineTo(mouseX, mouseY);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Fade-in constellation effect
+            if (constellationTimer > constellationInterval) {
+                const randomStars = [];
+                for (let i = 0; i < 5; i++) {
+                    randomStars.push(stars[Math.floor(Math.random() * stars.length)]);
+                }
+                
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(randomStars[0].x, randomStars[0].y);
+                for (let i = 1; i < randomStars.length; i++) {
+                    ctx.lineTo(randomStars[i].x, randomStars[i].y);
+                }
+                ctx.stroke();
+                
+                if (constellationTimer > constellationInterval + 1000) {
+                    constellationTimer = 0;
+                }
+            }
+
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+
+            // Decay scroll speed
+            scrollSpeed *= 0.95;
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Mouse tracking
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            mouseX = null;
+            mouseY = null;
+        });
+
+        // Scroll-based animation
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            scrollSpeed = Math.abs(currentScrollY - lastScrollY) * 0.1;
+            lastScrollY = currentScrollY;
+        });
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            if (document.body.classList.contains('theme-galaxy')) {
+                document.body.classList.remove('theme-galaxy');
+                document.body.classList.add('theme-light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                document.body.classList.remove('theme-light');
+                document.body.classList.add('theme-galaxy');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Resume card scrolling
+        function scrollToResumeCard(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                card.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 300);
+            }
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
