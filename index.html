@@ -39,7 +39,6 @@
             --connection-color: rgba(120, 134, 107, 0.3);
             --icon-color: #D4AF37;
         }
-
         body.theme-light {
             --bg-primary: #FFFFFF;
             --bg-secondary: #F8F8F8;
@@ -61,6 +60,20 @@
             box-sizing: border-box;
         }
 
+        body.theme-light .project-item,
+        body.theme-light .teaching-item,
+        body.theme-light .newsletter-card,
+        body.theme-light .resume-card {
+            background-color: #F9F9F9;
+        }
+
+        body.theme-galaxy .project-item,
+        body.theme-galaxy .teaching-item,
+        body.theme-galaxy .newsletter-card,
+        body.theme-galaxy .resume-card {
+            background-color: #252525;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
             line-height: 1.6;
@@ -74,7 +87,43 @@
         h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
         }
+        /* Replace existing h1, h2, h3 styles with fixed sizes */
+        h1 {
+            font-size: 3.5rem !important;
+        }
 
+        h2 {
+            font-size: 2.2rem !important;
+        }
+
+        h3 {
+            font-size: 1.3rem !important;
+        }
+
+        section h2 {
+            font-size: 2.2rem !important;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem !important;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem !important;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.1rem !important;
+        }
+
+        .hero-image {
+            max-width: 350px !important;
+            width: 350px !important;
+        }
+
+        .about-image {
+            width: 280px !important;
+        }
         nav {
             position: fixed;
             top: 0;
@@ -260,11 +309,28 @@
                 transform: translateY(0);
             }
         }
+        
+        /* Add after existing styles */
+        .section-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
 
         section {
+            position: relative;
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        section > * {
+            position: relative;
+            z-index: 1;
         }
 
         section h2 {
@@ -545,11 +611,10 @@
         }
 
         .action-btn {
-            padding: 0.4rem 0.8rem;
-            border: 2px solid var(--accent-1);
+            padding: 0;
+            border: none;
             color: var(--accent-1);
             text-decoration: none;
-            border-radius: 5px;
             font-size: 0.85rem;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -561,8 +626,8 @@
         }
 
         .action-btn:hover {
-            background-color: var(--accent-1);
-            color: white;
+            color: var(--accent-2);
+            transform: translateX(3px);
         }
 
         .action-btn .emoji-icon {
@@ -937,11 +1002,13 @@
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">Explore Projects</a>
                 <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <a href="#" class="btn btn-primary">🤖 Chat with AI Me</a>
             </div>
         </div>
     </section>
 
     <section id="about">
+        <canvas class="section-background"></canvas>
         <h2>About Me</h2>
         <div class="about-content">
             <div>
@@ -976,6 +1043,7 @@
     </section>
 
     <section id="resume">
+        <canvas id="neural-background"></canvas>
         <h2>Experience</h2>
         <div class="resume-container">
             <div class="timeline">
@@ -1079,6 +1147,7 @@
     </section>
 
     <section id="projects">
+        <canvas id="neural-background"></canvas>
         <h2>Projects</h2>
         <div class="projects-grid">
             <div class="project-item" onclick="openModal('project1')">
@@ -1184,6 +1253,7 @@
     </section>
 
     <section id="teaching">
+        <canvas id="neural-background"></canvas>
         <h2>Teaching</h2>
         <p class="teaching-intro">"I teach the next generation of AI talent to think like engineers, not just coders."</p>
         <div class="teaching-grid">
@@ -1250,6 +1320,7 @@
     </section>
 
     <section id="writing">
+        <canvas id="neural-background"></canvas>
         <h2>Technical Writing</h2>
         <p class="newsletter-intro">Deep dives into MLOps, production AI systems, and the intersection of physics and machine learning. Technical insights from building real-world AI solutions.</p>
         <div class="newsletter-grid">
@@ -1295,6 +1366,7 @@
     </section>
 
     <section id="contact">
+        <canvas id="neural-background"></canvas>
         <h2>Get In Touch</h2>
         <div class="contact-content">
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">
@@ -1595,7 +1667,7 @@
         canvas.height = window.innerHeight;
 
         const stars = [];
-        const numStars = 550;
+        const numStars = 350;
         const connectionDistance = 120;
         let mouseX = null;
         let mouseY = null;
@@ -1766,7 +1838,78 @@
                 }
             });
         });
+        // Initialize section backgrounds
+        const sections = document.querySelectorAll('section:not(#hero)');
 
+        sections.forEach(section => {
+            const canvas = section.querySelector('.section-background');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            canvas.width = section.offsetWidth;
+            canvas.height = section.offsetHeight;
+            
+            const stars = [];
+            const numStars = 150;
+            
+            for (let i = 0; i < numStars; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    z: Math.random() * 2,
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: (Math.random() - 0.5) * 0.2
+                });
+            }
+            
+            function animateSection() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const starColor = getComputedStyle(document.body).getPropertyValue('--star-color');
+                const connectionColor = getComputedStyle(document.body).getPropertyValue('--connection-color');
+                
+                stars.forEach((star, i) => {
+                    star.x += star.vx;
+                    star.y += star.vy;
+                    
+                    if (star.x < 0 || star.x > canvas.width) star.vx *= -1;
+                    if (star.y < 0 || star.y > canvas.height) star.vy *= -1;
+                    
+                    ctx.fillStyle = starColor;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.z, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    for (let j = i + 1; j < stars.length; j++) {
+                        const dx = star.x - stars[j].x;
+                        const dy = star.y - stars[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            ctx.strokeStyle = connectionColor;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(star.x, star.y);
+                            ctx.lineTo(stars[j].x, stars[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+                
+                requestAnimationFrame(animateSection);
+            }
+            
+            animateSection();
+        });
+
+        window.addEventListener('resize', () => {
+            sections.forEach(section => {
+                const canvas = section.querySelector('.section-background');
+                if (canvas) {
+                    canvas.width = section.offsetWidth;
+                    canvas.height = section.offsetHeight;
+                }
+            });
+        });
         // Mobile menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
