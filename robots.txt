@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aleenababy.github.io/sitemap.xml

@@ -379,3 +379,62 @@ body.home[data-hx-tone="paper"] .site-header:not(.is-solid) { color: #f4f4f7; te
 .status-line { font: 400 12px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--ink); margin: 0 0 var(--s-4); }
 
 @media print { .site-header, .site-footer, .skip { display: none; } body { background: #fff; } }
+
+.img-slot--filled { margin: 0; border: 0; background: #e9eaf5; }
+.img-slot--filled img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Body text: justified and full content width (Aleena, 2026-09-26).
+   Hero, headings, captions, meta lines and the footer keep their own alignment. */
+.prose, .wrap.prose > *, .wrap.post-head > *, .wrap.post-body > *, .case-head, .timeline, .notes,
+.entry p, .post-head, .post-body, .lead { max-width: none; }
+main p:not(.status-line):not(.meta):not(.muted):not(.repo-line):not(.lesson),
+main li > p, .lead, .abstract {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.hx p, .card p, figcaption, .bc-body p { text-align: left !important; hyphens: manual !important; -webkit-hyphens: manual !important; }
+
+.site-footer .sig { max-width: none; }
+
+/* Blog carousel rows (native rebuild of the kokonutui carousel-cards pattern) */
+.bc-row { margin-top: var(--s-6); }
+.bc-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-3); }
+.bc-head h2 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); margin: 0; }
+.bc-ctrl { display: flex; align-items: center; gap: .4rem; }
+.bc-btn { width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--line); background: var(--white); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: background-color .2s, border-color .2s, opacity .2s; }
+.bc-btn:hover { border-color: var(--ink); }
+.bc-btn:focus-visible { outline: 2px solid #ef6a2a; outline-offset: 2px; }
+.bc-btn[disabled] { opacity: .35; cursor: default; }
+.bc-all { white-space: nowrap; margin-left: .4rem; font-size: .875rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid #ef6a2a; }
+.bc-track { list-style: none; margin: 0 -4px; padding: 4px 4px var(--s-2); display: flex; gap: var(--s-3); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; scroll-padding-left: 4px; }
+.bc-track::-webkit-scrollbar { display: none; }
+.bc-track:focus-visible { outline: 2px solid #ef6a2a; outline-offset: 4px; border-radius: 12px; }
+.bc-item { flex: 0 0 min(80vw, 17.5rem); scroll-snap-align: start; }
+.bc-card { display: flex; flex-direction: column; height: 100%; background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; color: var(--ink); text-decoration: none; transition: box-shadow .3s, border-color .3s; }
+a.bc-card:hover { box-shadow: 0 10px 28px rgba(21, 22, 29, .10); border-color: #c9ccea; }
+a.bc-card:focus-visible { outline: 2px solid #ef6a2a; outline-offset: 2px; }
+.bc-img { position: relative; margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: #e9eaf5; }
+.bc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+a.bc-card:hover .bc-img img { transform: scale(1.05); }
+.bc-card--planned .bc-img img { filter: saturate(.55); opacity: .8; }
+.bc-badge { position: absolute; top: .6rem; left: .6rem; font-family: var(--mono); font-size: .6875rem; letter-spacing: .06em; text-transform: uppercase; background: rgba(255, 255, 255, .92); color: var(--ink); border-radius: 6px; padding: .2rem .5rem; }
+.bc-badge--planned { background: rgba(244, 244, 247, .9); border: 1px dashed var(--ink-2); color: var(--ink-2); }
+.bc-body { display: flex; flex-direction: column; flex: 1; padding: var(--s-3); gap: .35rem; }
+.bc-body h3 { font-size: 1rem; line-height: 1.35; margin: 0; text-align: left; }
+.bc-body p { margin: 0; text-align: left; hyphens: manual; }
+.bc-tags { font-size: .8125rem; color: var(--ink-2); }
+.bc-meta { margin-top: auto !important; padding-top: .35rem; font-family: var(--mono); font-size: .75rem; color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { .bc-img img, .bc-card { transition: none; } a.bc-card:hover .bc-img img { transform: none; } .bc-track { scroll-behavior: auto; } }
+
+/* Footer icon links */
+.site-footer ul.social { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; padding: 0; margin: 0 0 var(--s-4); }
+.site-footer ul.social a { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid rgba(244, 244, 247, .28); color: #f4f4f7; text-decoration: none; background: none; transition: background-color .2s, border-color .2s, color .2s; }
+.site-footer ul.social a:hover { background: #ef6a2a; border-color: #ef6a2a; color: #15161d; }
+.site-footer ul.social a:focus-visible { outline: 2px solid #ef6a2a; outline-offset: 3px; }
+.ficon { width: 1.15rem; height: 1.15rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* Header external link */
+.nav a.nav-ext { display: inline-flex; align-items: center; gap: .3rem; }
+.nav a.nav-ext .icon { width: .9em; height: .9em; }
+
+.cv-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); margin-top: var(--s-4); text-align: left !important; }

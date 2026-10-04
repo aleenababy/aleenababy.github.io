@@ -109,6 +109,28 @@ window.HERO_SCENES = [
       spark: [[0, 330, 440], [.6, 410, 430], [1.4, 690, 420], [2, 815, 405], [2.6, 940, 405], [3.2, 1110, 400], [3.6, 1180, 380], [4.1, 1240, 390]],
       tracks: [{ k: "q", p: "o", keys: [[0, 0], [.3, 0], [.7, 1]] }, { k: "typing", p: "o", keys: [[0, 0], [3.2, 0], [3.4, 1], [3.9, 1], [4, 0]] }, { k: "a", p: "o", keys: [[0, 0], [3.9, 0], [4.3, 1]] }]
     },
-    joinIn: "mist-to-grid", joinOut: "release-to-points", hold: 6, join: 2
+    joinIn: "mist-to-grid", joinOut: "peel-to-tokens", hold: 6, join: 2
+  },
+  {
+    id: "decodex",
+    chip: "Decodex: academic CVs in, industry-ready bullets out, on one LLM gateway with a fallback model.",
+    status: { label: "DECODEX", number: "40+ USERS" },
+    link: "work.html#decodex",
+    textTone: "ink", scrim: { color: "#f4f4f7", opacity: .55 }, safeZone: [[.06, .1, .4, .2], [.55, .6, .36, .2]],
+    layers: { sky: "s6-sky", subject: "s6-subject", fg: "s6-fg" },
+    focal: [800, 450],
+    palette: ["#7c86dc", "#f7d5b5", "#ef6a2a"],
+    formation: { preset: "flow", options: { inputs: [[400,400,500,380,590,406,700,406],[400,470,500,494,590,462,700,462]], outputs: [[900,462,960,462,1030,420,1104,420]], nodes: [], edges: [],
+      outWords: ["impact", "pipeline", "scaled", "shipped"], tokens: 3, spacing: .3, ride: 1.4, outAt: 2.4, dim: 0, lit: 1, switchAt: 1.6 } },
+    glyphs: ["PDEs", "solver", "thesis", "HPC", "postdoc", "cohort"],
+    timeline: {
+      camera: { from: [-14, 0, 1], to: [14, -6, 1.03] },
+      spark: [[0, 300, 470], [.6, 400, 470], [1.4, 690, 462], [2, 800, 450], [2.6, 900, 462], [3.2, 1104, 420], [3.6, 1170, 414], [4.1, 1250, 430]],
+      tracks: [{ k: "la", p: "o", keys: [[0, 1], [1.5, 1], [1.8, .35]] }, { k: "lb", p: "o", keys: [[0, 0], [1.5, 0], [1.8, 1]] },
+        { k: "c4", p: "o", keys: [[0, 1], [2.1, 1], [2.3, 0]] }, { k: "c3", p: "o", keys: [[0, 0], [2.1, 0], [2.3, 1]] },
+        { k: "b1", p: "o", keys: [[0, 0], [3.1, 0], [3.4, 1]] }, { k: "b2", p: "o", keys: [[0, 0], [3.4, 0], [3.7, 1]] }, { k: "b3", p: "o", keys: [[0, 0], [3.7, 0], [4, 1]] },
+        { k: "fit", p: "o", keys: [[0, 0], [4.1, 0], [4.5, 1]] }]
+    },
+    joinIn: "peel-to-tokens", joinOut: "release-to-points", hold: 6, join: 2
   }
 ];

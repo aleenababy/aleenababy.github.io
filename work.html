@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Dr. Aleena Baby</title>
+<meta name="description" content="PorosAI, the PorosAI assistant, Decodex and earlier projects: production ML and LLM systems by Dr. Aleena Baby.">
+<link rel="canonical" href="https://aleenababy.github.io/work.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dr. Aleena Baby">
+<meta property="og:title" content="Work · Dr. Aleena Baby">
+<meta property="og:description" content="PorosAI, the PorosAI assistant, Decodex and earlier projects: production ML and LLM systems by Dr. Aleena Baby.">
+<meta property="og:url" content="https://aleenababy.github.io/work.html">
+<meta property="og:image" content="https://aleenababy.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Dr. Aleena Baby, Blog" href="feed.xml">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><strong>Dr. Aleena Baby</strong><span>Machine learning engineer</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="about.html">About</a></li><li><a href="work.html" aria-current="page">Work</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="cv.html">CV</a></li>
+        <li><a class="nav-ext" href="https://academiatoindustry.com" rel="noopener">Academia to Industry<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="status-line">Work · 2019 to 2026</p>
+      <h1>Work</h1>
+      <p class="lead">Production ML for industrial systems, a live LLM product, and the research underneath both.</p>
+    </div>
+    <ul class="jump">
+      <li><a href="#porosai">PorosAI</a></li>
+      <li><a href="#assistant">PorosAI assistant</a></li>
+      <li><a href="#decodex">Decodex</a></li>
+      <li><a href="#papergraph">PaperGraph</a></li>
+      <li><a href="#earlier">Earlier projects</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--alt" id="porosai" aria-labelledby="porosai-title">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="status-line">Project 01 · PorosAI</p>
+      <span class="eyebrow">Flagship · ACCESS e.V., Aachen · 2025 to present</span>
+      <h2 id="porosai-title">PorosAI: porosity prediction for investment casting</h2>
+      <p class="lead">I am the lead developer of PorosAI at ACCESS e.V. on the RWTH Aachen campus. It predicts porosity defects in aerospace investment casting at the design stage, so a foundry knows a part will fail before anyone pours metal. It went from idea to proof of concept to first external customer in 18 months.</p>
+    </div>
+    <figure class="img-slot img-slot--filled img-slot--wide"><img src="assets/img/scenes/foundry.webp" width="960" height="720" loading="lazy" decoding="async" alt="Illustration: a turbine blade in hatched line work with a porosity heat map running from cool blue to hot orange across its surface."></figure>
+    <div class="tiles metrics">
+      <div class="tile"><span class="num">&lt; 1 s</span><p>inference, in place of solver runs of 45 minutes to 24 hours</p></div>
+      <div class="tile"><span class="num">~ 80 %</span><p>less design-iteration time</p></div>
+      <div class="tile"><span class="num">2.75 M+</span><p>point multiphysics dataset</p></div>
+      <div class="tile"><span class="num">5 to 6</span><p>manual simulation cycles saved per design</p></div>
+      <div class="tile"><span class="num">18 months</span><p>from idea to first external customer, as solo developer</p></div>
+      <div class="tile"><span class="num">95 %</span><p>accuracy on 3D point-cloud segmentation</p></div>
+    </div>
+    <div class="blocks">
+      <div class="block"><h3>Forward prediction</h3><p>Physics-informed surrogate models in Python, PyTorch and XGBoost, benchmarked against alternatives including PINNs. They are evaluated on geometries the models never saw in training, and they answer in under a second.</p></div>
+      <div class="block"><h3>Inverse design</h3><p>The optimizer runs the problem backwards: target quality in, design and process parameters out. That removes 5 to 6 manual simulation cycles from every design.</p></div>
+      <div class="block"><h3>Data</h3><p>Design-of-Experiments campaigns in STAR-CCM+, MAGMASOFT and ProCAST on HPC, combined with CT scans and experimental measurements, make a multiphysics dataset of more than 2.75 million points.</p></div>
+      <div class="block"><h3>Validation</h3><p>Geometry-held-out evaluation, verification against experiments and CT scans, and expert review in the loop. Every prediction ships with a calibrated uncertainty.</p></div>
+      <div class="block"><h3>Product layer</h3><p>A FastAPI backend and a Streamlit frontend with authentication and multi-tenant plans. MLflow and DVC track every run, and Docker and CI/CD gate every release on validation.</p></div>
+      <div class="block"><h3>3D geometry</h3><p>PointNet-based segmentation reads the part geometry directly and reaches 95 percent accuracy on 3D point clouds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="assistant" aria-labelledby="assistant-title">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="status-line">Project 02 · PorosAI assistant · In development</p>
+      <span class="eyebrow">In development · PorosAI</span>
+      <h2 id="assistant-title">PorosAI assistant</h2>
+      <p class="lead">An agentic assistant grounded in casting and metallurgy literature, built into PorosAI so that engineers can ask the field's research a question from inside the product.</p>
+    </div>
+    <figure class="img-slot img-slot--filled img-slot--wide"><img src="assets/img/scenes/assistant.webp" width="960" height="720" loading="lazy" decoding="async" alt="Illustration: pages of scientific literature turned into embeddings, feeding a casting assistant that answers a question with three sources."></figure>
+    <div class="blocks">
+      <div class="block"><h3>Grounded, not general</h3><p>Answers come from a curated casting knowledge base with a knowledge-graph backbone, not from the model's general memory, so every answer can point to where it came from.</p></div>
+      <div class="block"><h3>Agentic workflows</h3><p>The next step lets the assistant act inside PorosAI: pull the relevant prediction, compare it with the literature, and explain the difference to the engineer.</p></div>
+      <div class="block"><h3>Where it started</h3><p>The idea began as PaperGraph, a prototype I built to teach myself the domain. <a href="#papergraph">More on that below.</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="decodex" aria-labelledby="decodex-title">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="status-line">Project 03 · Decodex · 40+ users</p>
+      <span class="eyebrow">Live GenAI product · built and run solo</span>
+      <h2 id="decodex-title">Decodex: AI career tools for STEM PhDs</h2>
+      <p class="lead">Decodex translates academic CVs into industry language, checks job fit, builds interview stories, and maps PhD skills to industry roles, tuned for the German and European job market. I built it and I run it alone.</p>
+    </div>
+    <div class="tiles metrics">
+      <div class="tile"><span class="num">40+</span><p>users signed up</p></div>
+      <div class="tile"><span class="num">1</span><p>LLM gateway, with automatic fallback</p></div>
+      <div class="tile"><span class="num">1</span><p>engineer, from design to operations</p></div>
+    </div>
+    <figure class="img-slot img-slot--filled img-slot--wide"><img src="assets/img/scenes/decodex.webp" width="960" height="720" loading="lazy" decoding="async" alt="Illustration: an academic CV passes through an LLM gateway with a fallback model and a credits counter, and comes out as industry-ready bullets in the Decodex app."></figure>
+    <div class="blocks">
+      <div class="block"><h3>One LLM gateway</h3><p>Every tool calls the same gateway: Claude with an automatic fallback model, credits deducted before each call, and a log of every request per tool and model.</p></div>
+      <div class="block"><h3>Prompts as code</h3><p>Each tool has its own versioned prompt system, so a change to one tool cannot silently change another.</p></div>
+      <div class="block"><h3>The stack</h3><p>React and TypeScript on the front, Deno edge functions and Postgres with Auth on Supabase behind it, Stripe for payments, and GDPR-compliant storage.</p></div>
+    </div>
+    <p class="repo-line"><a class="iconlink" href="https://decodex.academiatoindustry.com">Open Decodex <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></p>
+    <p class="muted">Decodex is part of Academia to Industry, where I help PhDs move into industry.</p>
+  </div>
+</section>
+
+<section class="section" id="papergraph" aria-labelledby="papergraph-title">
+  <div class="wrap">
+    <div class="case-head">
+      <p class="status-line">Project 04 · PaperGraph · Prototype</p>
+      <h2 id="papergraph-title">PaperGraph, a prototype that fed the product</h2>
+      <p class="lead">PaperGraph is a working prototype: a knowledge graph with an LLM layer over casting and metallurgy literature. I built it to teach myself the domain, because I came to casting as a physicist, not a metallurgist. It never shipped as a product, and it did not need to. Its concepts became the backbone of the PorosAI assistant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="earlier" aria-labelledby="earlier-title">
+  <div class="wrap">
+    <div class="section-head"><h2 id="earlier-title">Earlier projects</h2></div>
+    <div class="cards">
+      <article class="card">
+        <span class="eyebrow">Omdena · 2023</span>
+        <h3>AI early-warning weather system, Tanzania</h3>
+        <p>More than 20 data sources merged into one forecasting model, with alerts delivered in production by SMS and WhatsApp.</p>
+      </article>
+      <article class="card">
+        <span class="eyebrow">Omdena</span>
+        <h3>Air quality analysis, Gurugram</h3>
+        <p>A machine-learning analysis of what drives pollution episodes in one of India's most polluted cities.</p>
+      </article>
+      <article class="card">
+        <span class="eyebrow">LLM application</span>
+        <h3>Car-reviews LLM app</h3>
+        <p>Sentiment, translation, question answering and summarization over car reviews with Hugging Face transformers and PyTorch.</p>
+        <a class="more" href="https://github.com/aleenababy/car_review_analysis">View code <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="sig">Physics PhD turned machine learning engineer.<br>Building industrial AI in Germany.</p>
+    <ul class="social"><li><a href="https://github.com/aleenababy" aria-label="GitHub" title="GitHub"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg></a></li><li><a href="https://linkedin.com/in/aleena-baby" aria-label="LinkedIn" title="LinkedIn"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg></a></li><li><a href="https://scholar.google.com/citations?user=MxLHgh4AAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></a></li><li><a href="https://academiatoindustry.substack.com" aria-label="Substack" title="Substack"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16M4 8h16"></path><path d="M4 12h16v9l-8-4.5L4 21z"></path></svg></a></li><li><a class="js-email" href="#" aria-label="Email" title="Email"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg></a></li><li><a href="cv.html" aria-label="CV" title="CV"><svg class="ficon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></a></li></ul>
+    <small>© 2026 Aleena Baby</small>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body></html>

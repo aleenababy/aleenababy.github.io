@@ -70,7 +70,7 @@ Formation presets: `spiral`, `rainfill`, `grid`, `flow`, `mesh`, `scatter`. Join
 
 ## Before publishing
 
-- [ ] Put the real email address in `js/main.js` (the `EMAIL-USER` and `EMAIL-DOMAIN` parts). The address never appears in HTML text, by design.
+- [x] Email wired in `js/main.js`: stored as shifted numbers and assembled only on a genuine click, so it never appears in the HTML.
 - [ ] Resolve `[VERIFY: B2 certified yet?]` in the facts strip.
 - [ ] Replace the `[DATE]` placeholder on the first blog card.
 - [ ] Supply the three Selected work images: a PorosAI image cleared for publication, a Decodex screenshot, an OpenFOAM field render.

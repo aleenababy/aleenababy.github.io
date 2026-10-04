@@ -3,15 +3,19 @@
   var doc = document.documentElement;
   doc.classList.add("js");
 
-  // Email: assembled from parts so the address never appears in HTML text.
-  // [VERIFY] Replace the two parts below with Aleena's real address before publishing.
-  var user = "EMAIL-USER";
-  var host = ["EMAIL-DOMAIN", "com"].join(".");
-  var links = document.querySelectorAll("a.js-email");
-  for (var i = 0; i < links.length; i++) {
-    var subject = links[i].getAttribute("data-subject");
-    links[i].href = "mailto:" + user + "@" + host + (subject ? "?subject=" + encodeURIComponent(subject) : "");
-  }
+  // Email: never written into the page. The address is stored shifted as numbers and
+  // assembled only inside a genuine click or key press (event.isTrusted), so crawlers that
+  // read the HTML, or run the page without a real user, never see it.
+  var K = [103, 117, 49, 100, 111, 104, 104, 113, 100, 49, 101, 100, 101, 124, 67, 106, 112, 100, 108, 111, 49, 102, 114, 112];
+  function addr() { var s = ""; for (var j = 0; j < K.length; j++) s += String.fromCharCode(K[j] - 3); return s; }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a.js-email") : null;
+    if (!a) return;
+    e.preventDefault();
+    if (!e.isTrusted) return;
+    var subject = a.getAttribute("data-subject");
+    window.location.href = "mail" + "to:" + addr() + (subject ? "?subject=" + encodeURIComponent(subject) : "");
+  });
 
   // Mobile nav toggle
   var toggle = document.querySelector(".nav-toggle");
@@ -54,4 +58,30 @@
     requestAnimationFrame(function () { var h = doc.scrollHeight - innerHeight; bar.style.transform = "scaleX(" + (h > 0 ? scrollY / h : 0) + ")"; ticking = false; });
   }
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();
+
+/* Blog carousel rows: previous and next buttons scroll by one card; buttons disable at either end. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-carousel]").forEach(function (track) {
+    var row = track.closest(".bc-row");
+    if (!row) return;
+    var btns = row.querySelectorAll(".bc-btn");
+    function step() { var c = track.querySelector(".bc-item"); return c ? c.getBoundingClientRect().width + 16 : 300; }
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      btns.forEach(function (b) {
+        var d = +b.getAttribute("data-dir");
+        b.disabled = max <= 0 || (d < 0 ? track.scrollLeft <= 2 : track.scrollLeft >= max);
+      });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        track.scrollBy({ left: +b.getAttribute("data-dir") * step(), behavior: reduce ? "auto" : "smooth" });
+      });
+    });
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
 })();
