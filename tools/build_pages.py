@@ -437,7 +437,7 @@ POSTS = [
     # slug, title, abstract, tags, published, image, row
     ("leakage-grouped-holdout", "The leakage that inflated our early metrics",
      "Random splits put correlated points from the same simulation on both sides of the split. The fix was a grouped holdout at the geometry level. Here is what it changed.",
-     ["Physics-informed ML", "MLOps"], True, "foundry", "piml"),
+     ["Physics-informed ML", "MLOps"], False, "foundry", "piml"),
     (None, "Scarce labels: encode the physics, not more capacity",
      "When labelled data is small, adding model capacity overfits. Encoding solidification physics and boundary conditions into the feature space let the models generalize to configurations they never saw.",
      ["Physics-informed ML"], False, "observatory", "piml"),
@@ -460,6 +460,9 @@ POSTS = [
      "Field notes from the crossing, written from the practitioner's chair.",
      ["Field notes"], False, "assistant", "sys"),
 ]
+
+# Set to True to publish the written post page again (it also re-enters the feed and sitemap).
+PUBLISH_POSTS = False
 
 ROWS = [("piml", "Physics-informed ML and simulation"), ("sys", "Systems, LLMs and field notes")]
 
@@ -530,6 +533,8 @@ def build_blog():
          "Engineering write-ups by Dr. Aleena Baby on physics-informed ML, MLOps, simulation surrogates and LLM systems in production.",
          body, "blog/index.html")
 
+    if not PUBLISH_POSTS:
+        return
     fig = '''<figure class="diagram">
   <svg viewBox="0 0 760 300" role="img" aria-labelledby="fg-t fg-d">
     <title id="fg-t">Random split versus grouped holdout</title>
@@ -594,16 +599,18 @@ for train_idx, test_idx in cv.split(X, y, groups=geometry_id):
 
 # ============================================================ FEED, SITEMAP, HOME PATCH
 def build_feed_sitemap():
-    feed = f'''<?xml version="1.0" encoding="UTF-8"?>
+    feed = (f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
 <title>Dr. Aleena Baby, Blog</title><link>{SITE}blog/</link>
 <description>Engineering write-ups on physics-informed ML, MLOps and LLM systems.</description>
-<item><title>The leakage that inflated our early metrics</title><pubDate>Thu, 01 Oct 2026 08:00:00 +0200</pubDate><link>{SITE}blog/leakage-grouped-holdout.html</link>
-<description>Random splits put correlated points from the same simulation on both sides. The fix was a grouped holdout at the geometry level.</description></item>
+{{ITEM}}<item><title>The leakage that inflated our early metrics</title><pubDate>Thu, 01 Oct 2026 08:00:00 +0200</pubDate><link>{SITE}blog/leakage-grouped-holdout.html</link>
+<description>Random splits put correlated points from the same simulation on both sides. The fix was a grouped holdout at the geometry level.</description></item>{{END}}
 </channel></rss>
-'''
+''')
+    a, b = feed.find("{ITEM}"), feed.find("{END}")
+    feed = feed.replace("{ITEM}", "").replace("{END}", "") if PUBLISH_POSTS else feed[:a] + feed[b + len("{END}"):]
     open(os.path.join(ROOT, "feed.xml"), "w", encoding="utf-8").write(feed)
-    urls = ["", "about.html", "work.html", "cv.html", "blog/", "blog/leakage-grouped-holdout.html"]
+    urls = ["", "about.html", "work.html", "cv.html", "blog/"] + (["blog/leakage-grouped-holdout.html"] if PUBLISH_POSTS else [])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
         "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(sm)
